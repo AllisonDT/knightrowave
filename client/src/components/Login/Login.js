@@ -25,6 +25,11 @@ export default function Login({ setToken }) {
     });
   };
 
+    const handleGoogleSignIn = () => {
+        // Redirect to the backend route for Google authentication
+        window.location.href = `${apiUrl}/auth/google/callback`;
+    };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -175,14 +180,14 @@ export default function Login({ setToken }) {
           >
             Sign In
           </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{ mt: 0, mb: 1 }}
-            href="/auth/google/callback"
-          >
-            Sign In With Google
-          </Button>
+            <Button
+                fullWidth
+                variant="contained"
+                sx={{ mt: 0, mb: 1 }}
+                onClick={handleGoogleSignIn}
+            >
+                Sign In With Google
+            </Button>
           <Grid container>
             <Grid item xs>
               <Link href="/register" variant="body2">

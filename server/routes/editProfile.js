@@ -8,7 +8,7 @@ const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({
     keyFilename: 'knightrowave-ab29af5b421a.json',
 });
-const bucket = storage.bucket('knightrowave-profile-pics');
+const bucket = storage.bucket('knightrowave');
 
 // Multer middleware setup for handling file uploads
 const upload = multer({
